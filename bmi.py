@@ -1,4 +1,8 @@
-import winsound
+try:
+    import winsound
+except ImportError:
+    winsound = None
+
 
 petla = True
 
@@ -19,17 +23,18 @@ while (petla):
     print(f"Twoje bmi: {round(bmi, 2)}")
 
     if bmi < 18.5:
-        winsound.Beep(500, 1000)
+        #winsound.Beep(500, 1000)
         print("niedowaga")
     elif bmi >= 30:
-        winsound.Beep(700, 1000)
+        #winsound.Beep(700, 1000)
         print("otyłość")
     elif bmi >= 18.5 and bmi <= 24.9:
-        winsound.Beep(300, 400)
+        #winsound.Beep(300, 400)
         print("waga prawidłowa")
     else:
-        winsound.Beep(500, 1000)
+        #winsound.Beep(500, 1000)
         print("nadwaga")
 
     odpowiedz = input("\nWpisz coś żeby kontynuować dla kolejnej osoby (pozostaw puste żeby zakończyć): ")
     petla = odpowiedz or False
+
